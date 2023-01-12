@@ -1,33 +1,50 @@
-const minus = '-';
-const plus = '+';
-const mnozhennya = '*';
-const dilennya = '/';
+// Перша частина домашньої роботи
 
-let nameAction = prompt('Що ви хочете зробити?', 'dev, sub, mult, div');
+let age = prompt('Вкажіть Ваш рік народження');
+let city = prompt('В якому місті ви живете?');
+let sport = prompt('Який Ваш улюблений вид спорту?');
 
-let number1 = prompt('Введіть перше число');
-let number2 = prompt('Введіть дрге число число');
+let capital = ['Київ', 'Лондон', 'Париж', 'Вашингтон', 'Прага']
 
-if (nameAction == 'dev') {
-    alert(Number(number1) - Number(number2));
-} else if (nameAction == minus) {
-    alert(Number(number1) - Number(number2));
-} else
+if (city === capital) {
+    alert(`${age}. Ти живеш у столиці ${city}`);
+} else {
+    alert(`${age}. Ти живеш у місті ${city}`);
+}
 
-if (nameAction == 'sub') {
-    alert(Number(number1) + Number(number2));
-} else if (nameAction == plus) {
-    alert(Number(number1) + Number(number2));
-} else
 
-if (nameAction == 'mult') {
-    alert(Number(number1) * Number(number2));
-} else if (nameAction == mnozhennya) {
-    alert(Number(number1) * Number(number2));
-} else
+// Друга частина домашньої роботи
 
-if (nameAction == 'div' | '/') {
-    alert(Number(number1) / Number(number2));
-} else if (nameAction == dilennya) {
-    alert(Number(number1) / Number(number2));
-}  
+/* let age = prompt('Вкажіть Ваш рік народження');
+if (age === null) {
+    alert('Шкода що Ви не ввели свій рік народження');
+}
+
+let user = prompt('Як вас звати?');
+if (user === null) {
+    alert('Шкода що Ви не ввели своє ім`я');
+}
+
+let sport = prompt('Який Ваш улюблений вид спорту?');
+if (sport === null) {
+    alert('Шкода що Ви не ввели свій улюблений вид спорту');
+}
+
+switch (user) {
+    case 'Андрій':
+    case 'Артур':
+    case 'Вітя':
+        if (sport === 'бокс' || 'футбол' || 'хокей') {
+            alert(`Круто! Хочеш стати чемпіоном ${user}?`)
+        };
+        break;
+    default:
+        alert('Маємо надію, що найближчим часом ви станете чемпіоном!');
+} */
+
+// Спочатку був нижченаведений варантБ но надто громіздкий. Замість нього зробив із вкладенням що вище.
+
+/* let message = (user === 'Андрій' || 'Артур' || 'Вітя' && sport === 'бокс' || 'футбол' || 'хокей') ? `Хочеш стати чемпіоном ${user}?` : `Ти хороший, ${user}?`;
+alert(message); */
+
+
