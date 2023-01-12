@@ -1,33 +1,13 @@
-const minus = '-';
-const plus = '+';
-const mnozhennya = '*';
-const dilennya = '/';
-
 let nameAction = prompt('Що ви хочете зробити?', 'dev, sub, mult, div');
-
 let number1 = prompt('Введіть перше число');
 let number2 = prompt('Введіть дрге число число');
 
-if (nameAction == 'dev') {
+if (nameAction == 'dev' || nameAction == '-') {
     alert(Number(number1) - Number(number2));
-} else if (nameAction == minus) {
-    alert(Number(number1) - Number(number2));
-} else
-
-if (nameAction == 'sub') {
+} else if (nameAction == 'sub' || nameAction == '+') {
     alert(Number(number1) + Number(number2));
-} else if (nameAction == plus) {
-    alert(Number(number1) + Number(number2));
-} else
-
-if (nameAction == 'mult') {
+} if (nameAction == 'mult' || nameAction == '*') {
     alert(Number(number1) * Number(number2));
-} else if (nameAction == mnozhennya) {
-    alert(Number(number1) * Number(number2));
-} else
-
-if (nameAction == 'div' | '/') {
+} else if (nameAction == 'div' || nameAction == '/') {
     alert(Number(number1) / Number(number2));
-} else if (nameAction == dilennya) {
-    alert(Number(number1) / Number(number2));
-}  
+} 
