@@ -1,102 +1,93 @@
 let arr = [16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 27, -63, 4, -54, 76, -4, 12, -35, 4, 47];
 
 // ЗАВДАННЯ 1. Знайти суму та кількість позитивних елементів.
-let positiveEl = arr.filter((el) => {
+let positiveElements = arr.filter((el) => {
   if (el > 0) {
     return el;
   }
 })
-
-let sumPositiveEl = positiveEl.reduce((acummulator, item) => acummulator + item);
-console.log(`Сума позитивних елементів = ${sumPositiveEl}, кількість позитивних елементів = ${positiveEl.length}`);
+let sumPositiveElements = positiveElements.reduce((acummulator, item) => acummulator + item);
+console.log(`Сума позитивних елементів =`, sumPositiveElements, 'кількість позитивних елементів =', positiveElements.length);
 
 
 // ЗАВДАННЯ 2. Знайти мінімальний елемент масиву та його порядковий номер.
-let minNumb = arr[0];
+let minElementArr = arr[0];
 let i = 0;
 while (i < arr.length) {
-  if (minNumb > arr[i]) {
-    minNumb = arr[i]
+  if (minElementArr > arr[i]) {
+    minElementArr = arr[i]
   }
   i++;
 }
-console.log(`Мінімальний елемент масиву = ${minNumb}, його порядковий номер = ${arr.indexOf(minNumb) + 1}`);
+console.log(`Мінімальний елемент масиву =`, minElementArr, `його порядковий номер =`, arr.indexOf(minElementArr++) + 1);
 
 
 // ЗАВДАННЯ 3. Знайти максимальний елемент масиву та його порядковий номер.
-let maxNumb = arr[0];
+// знаходимо максимальний елемент масиву
+let maxElementArr = arr[0];
 for (let i = 0; i < arr.length; i++) {
-  if (maxNumb < arr[i]) {
-    maxNumb = arr[i]
+  if (maxElementArr < arr[i]) {
+    maxElementArr = arr[i]
   }
 }
-console.log(`Максимальний елемент масиву = ${maxNumb}, його порядковий номер ${arr.indexOf(maxNumb) + 1}`);
+// знаходимо його порядковий номер // звернути увагу що числа у масиві повторюються 
+let numb = arr.findIndex((el, index) => {
+  if (maxElementArr === el) {
+    console.log(`Максимальний елемент масиву =`, maxElementArr, `його порядковий номер =`, ++index,);
+  }
+})
 
 
 // ЗАВДАННЯ 4. Визначити кількість негативних елементів.
-let negativeEl = arr.filter((el) => {
+let negativeElementArr = arr.filter((el) => {
   if (el < 0) {
     return el;
   }
 })
-console.log(`Кількість негативних елементів = ${negativeEl.length}`);
+console.log(`Кількість негативних елементів`, negativeElementArr.length);
 
 
-// ЗАВДАННЯ 5. Знайти кількість непарних позитивних елементів.
-
-// знаходимо числа які повторюються
-let twinEl = arr.filter((el, index, selfArr) => {
-  return selfArr.indexOf(el) !== index;
+// ЗАВДАННЯ 5. Знайти кількість повторюваних позитивних елементів.
+let repeatPositiveElement = arr.filter((el, index, selfArr) => {
+  if(el > 0) {
+    return selfArr.indexOf(el) !== index;
+  }
 })
+console.log(`Кількість повторюваних позитивних елементів`, repeatPositiveElement.length)
 
-// відфільтровуємо з первинного масиву елементи які вкючає в себе масив twinEl (повторювані числа)
-let oddEl = arr.filter((el) => !twinEl.includes(el)
-)
 
-// відфільтровуємо позитивні елементи із уже унікальних
-let oddPositiveEl = oddEl.filter((el) => {
+// ЗАВДАННЯ 6. Знайти кількість унікальних позитивних елементів.
+let uniquePositiveElement = arr.filter((el, index) => {
   if (el > 0) {
-    return el;
+    return arr.indexOf(el) === index
   }
 })
-console.log(`Кількість непарних позитивних елементів = ${oddPositiveEl.length}`)
+console.log(`Кількість унікальних позитивних елементів`, uniquePositiveElement.length)
+
+// ЗАВДАННЯ 7. Знайти суму повторюваних позитивних елементів.
+let sumRepeatPositiveElement = repeatPositiveElement.reduce((acummulator, item) => acummulator + item);
+console.log(`Cума повторюваних позитивних елементів =`, sumRepeatPositiveElement);
 
 
-// ЗАВДАННЯ 6. Знайти кількість парних позитивних елементів.
-let twinPositiveEl = twinEl.filter((el) => {
-  if (el > 2) {
-    return el;
-  }
-})
-console.log(`Кількість парних позитивних елементів = ${twinPositiveEl.length}`);
-
-
-// ЗАВДАННЯ 7. Знайти суму парних позитивних елементів.
-let sumTwinPositiveEl = twinPositiveEl.reduce((acummulator, item) => acummulator + item);
-console.log(`Cума парних позитивних елементів = ${sumTwinPositiveEl}`);
-
-
-// ЗАВДАННЯ 8. Знайти суму непарних позитивних елементів.
-let sumOddPositiveElEl = oddPositiveEl.reduce((acummulator, item) => acummulator + item);
-console.log(`Cума непарних позитивних елементів = ${sumOddPositiveElEl}`);
+// ЗАВДАННЯ 8. Знайти суму унікальних позитивних елементів.
+let sumUniquePositiveElement = uniquePositiveElement.reduce((acummulator, item) => acummulator + item);
+console.log(`Cума унікальних позитивних елементів =`, sumUniquePositiveElement);
 
 
 // ЗАВДАННЯ 9. Знайти добуток позитивних елементів.
-
 // перший спосіб вирішення
-let product = positiveEl.reduce((acummulator, item) => acummulator * item);
-console.log(product);
+let productPositiveElement = positiveElements.reduce((acummulator, item) => acummulator * item);
+console.log(`Добуток позитивних елементів`, productPositiveElement);
 
 // другий спосіб вирішення
 let productCycle = 1;
-for (let i = 0; i < positiveEl.length; i++) {
-  productCycle = productCycle * positiveEl[i]; // або  productCycle *= positiveEl[i];
+for (let i = 0; i < positiveElements.length; i++) {
+  productCycle = productCycle * positiveElements[i]; // або  productCycle *= positiveEl[i];
 }
-console.log(productCycle);
+console.log(`Добуток позитивних елементів`, productCycle);
 
 
 // ЗАВДАННЯ 10. Знайти найбільший серед елементів масиву, остальні обнулити.
-
 // знаходимо найбільший елемент серед масиву
 let maxNumberArr = arr[0];
 arr.forEach((el) => {
