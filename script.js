@@ -6,7 +6,7 @@ function degreeСomp(num, degree) {
     if (degree == 1) {
         return num;
     } else {
-        return num * degreeСomp(num, degree - 1);
+        return degreeСomp(num * num, degree - 1);
     }
 }
-console.log(degreeСomp(5, 2))
+console.log(degreeСomp(10, 3))
