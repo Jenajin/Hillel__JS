@@ -127,13 +127,12 @@ student2.present()
 student2.present()
 student2.present()
 
-
 student2.summary()
 
 console.log(`Хорошист`, student2)
 
 // 3 погані оцінки та погана відвідуваність
-const student3 = new Students('Andrii', 'Bern', 1994, [100, 87, 50, 50, 100, 100, 100])
+const student3 = new Students('Anton', 'Budnik', 1998, [74, 87, 50, 50, 50, 12, 65])
 student3.age()
 student3.gpa()
 student2.absent()
