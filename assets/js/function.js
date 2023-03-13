@@ -108,6 +108,7 @@ function internetShop() {
         goProducsInfo(e)
     });
 }
+internetShop ()
 
 
 
