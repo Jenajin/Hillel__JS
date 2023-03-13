@@ -5,19 +5,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Internet-shop</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
-    <div class="notebook">
-        <div class="notebook__wrapper">
-            <button class="notebook__btn btn-create">Показати</button>
-            <button class="notebook__btn btn-remove">Видалити</button>
+    <div class="products">
+        <div class="producs-categories">
+            <div data-action="dairy-products" class="producs-categories__btn">Молочні вироби</div>
+            <div data-action="vegetables" class="producs-categories__btn">Овочі</div>
+            <div data-action="fruits" class="producs-categories__btn">Фрукти</div>
+            <div data-action="meat-products" class="producs-categories__btn">М'ясні вироби</div>
         </div>
+
+        <div class="producs-goods"></div>
+
+        <div class="producs-info"></div>
     </div>
     
-    <script async src="script.js"></script>
+    <script async src="assets/js/script.js"></script>
+    <script async src="assets/js/function.js"></script>
+    <script async src="assets/js/arr-producs.js"></script>
 </body>
 
 </html>
