@@ -114,6 +114,13 @@ const getEl = (selector) => document.querySelector(selector);
 
 function internetShop() {
     const allArrProducs = [dairyProducts, fruits, vegetables, meatProducts,]
+    const allArrCategories = {
+        'dairy-products': dairyProducts,
+        'vegetables': vegetables,
+        'fruits': fruits,
+        'meat-products': meatProducts,
+    }
+
     const producsCategories = getEl('.producs-categories')
     const producsGoods = getEl('.producs-goods')
     const producsInfo = getEl('.producs-info')
@@ -146,30 +153,7 @@ function internetShop() {
         if (target === undefined) return;
         producsGoods.innerHTML = '';
         producsInfo.innerHTML = '';
-
-        if (target === 'dairy-products') {
-            dairyProducts.forEach((item) => {
-                producsGoods.appendChild(createGoods(item));
-            })
-        }
-
-        if (target === 'vegetables') {
-            vegetables.forEach((item) => {
-                producsGoods.appendChild(createGoods(item));
-            })
-        }
-
-        if (target === 'fruits') {
-            fruits.forEach((item) => {
-                producsGoods.appendChild(createGoods(item));
-            })
-        }
-
-        if (target === 'meat-products') {
-            meatProducts.forEach((item) => {
-                producsGoods.appendChild(createGoods(item));
-            })
-        }
+        allArrCategories[target].forEach((item) => producsGoods.appendChild(createGoods(item)))
     }
 
     function goProducsGoods(target) {
@@ -220,7 +204,7 @@ function internetShop() {
         goProducsInfo(e)
     });
 }
-internetShop ()
+internetShop()
 
 
 
