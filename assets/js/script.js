@@ -110,6 +110,24 @@ const meatProducts = [
     },
 ]
 
+const meatFormalino = [
+    {
+        name: 'Крильця',
+        description: 'Курячі, стероїдні',
+        price: 300,
+    },
+    {
+        name: 'Сало',
+        description: 'Посолене, перчене, проварене',
+        price: 200,
+    },
+    {
+        name: 'Філе куряче',
+        description: 'Багато білка',
+        price: 300,
+    },
+]
+
 const getEl = (selector) => document.querySelector(selector);
 
 function internetShop() {
@@ -119,6 +137,7 @@ function internetShop() {
         'vegetables': vegetables,
         'fruits': fruits,
         'meat-products': meatProducts,
+        'meat-formalino': meatFormalino,
     }
 
     const producsCategories = getEl('.producs-categories')
