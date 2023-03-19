@@ -64,3 +64,18 @@
     background-color:lightcyan;
     flex: 2;
 }
+
+.form {
+    padding: 20px;
+    background-color: bisque;
+    width: fit-content;
+    margin-top: 30px;
+
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin-bottom: 10px;
+}

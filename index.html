@@ -10,6 +10,7 @@
 </head>
 
 <body>
+
     <div class="products">
         <div class="producs-categories">
             <div data-action="dairy-products" class="producs-categories__btn">Молочні вироби</div>
@@ -23,6 +24,78 @@
 
         <div class="producs-info"></div>
     </div>
+
+
+    <!-- Форма -->
+    <form class="form" action="https://tests.fomenko.top/echo/index.php" name="form" autocomplete="on">
+
+        <div class="form-container">
+            <label>
+                <strong>Зповніть будь ласка форму для завершення покупки</strong>
+            </label>
+        </div>
+
+        <div class="form-container">
+            <label for="name">Ім'я</label>
+            <input type="text" name="name" id="name">
+        </div>
+
+        <div class="form-container">
+            <label for="last_name">Прізвище</label>
+            <input type="text" name="last_name" id="last_name">
+        </div>
+
+        <div class="form-container">
+            <label for="surname">По батькові</label>
+            <input type="text" name="surname" id="surname">
+        </div>
+
+        <div class="form-container">
+            <label for="city">Місто</label>
+            <select id="city" name="city" autofocus>
+                <option disabled selected>Виберіть один із варіантів</option>
+                <option>Київ</option>
+                <option>Львів</option>
+                <option>Одеса</option>
+                <option>Івано-Франківськ</option>
+                <option>Харків</option>
+                <option>Ужгород</option>
+                <option>Севастополь</option>
+                <option>Донецьк</option>
+            </select>
+        </div>
+
+        <div class="form-container">
+            <label for="storage">Склад Нової Пошти</label>
+            <select id="storage" name="storage">
+                <option disabled selected>Виберіть один із варіантів</option>
+                <option>Склад №1</option>
+                <option>Склад №2</option>
+                <option>Склад №3</option>
+            </select>
+        </div>
+
+        <div class="form-container">
+            <label for="payment">Оплата</label>
+            <select id="payment" name="payment">
+                <option disabled selected>Виберіть один із варіантів</option>
+                <option>Оплата банківською карткою</option>
+                <option>Післяплата</option>
+            </select>
+        </div>
+
+        <div class="form-container">
+            <label>Кількість одиниць:
+                <input type="number" name="amount" step="1" min="1" max="50" value="1">
+            </label>
+
+        </div>
+
+        <div class="form-container">
+            <label for="comment">Додаткові відомості</label>
+            <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+        </div>
+    </form>
 
     <script async src="assets/js/script.js"></script>
 </body>
