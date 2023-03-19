@@ -1,4 +1,3 @@
-
 function addTextField() {
     const notebook = document.querySelector('.notebook__container-text')
     const btnСreate = document.querySelector('.btn-create')
@@ -34,10 +33,8 @@ function addTextField() {
     notebook.addEventListener('click', function (e) {
         const target = e.target
         if(!target.classList.contains('notebook__text-field')) return
-        
         target.classList.toggle('bg')
     })
- 
 }
 
 addTextField()
