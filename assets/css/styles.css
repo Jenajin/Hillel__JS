@@ -32,6 +32,7 @@
     width: 100%;
     background-color: cornsilk;
     display: flex;
+    flex-wrap: wrap;
     width: fit-content;
     padding: 20px;
 }
@@ -89,6 +90,33 @@
     position: relative;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
     border: 1px solid black;
+}
+
+.result-buy {
+    display: none;
+    width: 400px;
+    padding: 20px;
+}
+
+.result-buy u, b {
+    margin-bottom: 10px;
+    display: block;
+}
+
+.result-buy__form {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.result-buy__form li {
+    margin-bottom: 10px;
+}
+
+.confirm {
+    cursor: pointer;
 }

@@ -195,6 +195,7 @@ function internetShop() {
             let productFound = false;
             let prodDesc, prodPrice;
 
+
             allArrProducs.forEach((el) => {
                 const foundProduct = el.find((item) => item.name === prod);
                 if (foundProduct) {
@@ -208,13 +209,16 @@ function internetShop() {
                 producsInfo.innerHTML = '';
                 producsInfo.appendChild(createDescription({ description: prodDesc, price: prodPrice }));
                 producsInfo.appendChild(createBuyButton());
+
+                // визиваємо форму передаючи в неї обраний товар та його ціну
+                form(target.innerText, prodPrice)
             }
         }
     }
 
     function goProducsInfo(e) {
         if (e.target.classList.contains('buy-btn')) {
-            alert('Товар куплено!');
+            alert('Товар додано в корзину. Заповніть будь лака форму для завершення покупки!');
             producsGoods.innerHTML = '';
             producsInfo.innerHTML = '';
 
@@ -237,13 +241,16 @@ function internetShop() {
 
     producsInfo.addEventListener('click', (e) => {
         goProducsInfo(e)
+
+
     });
+
 }
 internetShop()
 
 
 // код для форми
-function form() {
+function form(prod, price) {
     const form = getElbyID('form');
     const nameInput = form.name
     const lastNameInput = form.last_name
@@ -253,53 +260,54 @@ function form() {
     const paymentInput = form.payment
     const numberInput = form.amount
     const commentInput = form.comment
+
     const btnSubmitInput = getElbyID('btn-submit')
 
     const inputs = [
         {
-            name: 'name',
+            name: 'Ім`я',
             inputEl: nameInput,
             validationRules: [isNameCheck],
             isValid: false,
         },
         {
-            name: 'lastName',
+            name: 'Прізвище',
             inputEl: lastNameInput,
             validationRules: [isNameCheck],
             isValid: false,
         },
         {
-            name: 'surname',
+            name: 'По батькові',
             inputEl: surNameInput,
             validationRules: [isNameCheck],
             isValid: false,
         },
         {
-            name: 'city',
+            name: 'Місто',
             inputEl: cityInput,
             validationRules: [isEmptySelect],
             isValid: false,
         },
         {
-            name: 'storageInput',
+            name: 'Склад Нової Пошти',
             inputEl: storageInput,
             validationRules: [isEmptySelect],
             isValid: false,
         },
         {
-            name: 'payment',
+            name: 'Спосіб оплати',
             inputEl: paymentInput,
             validationRules: [isEmptySelect],
             isValid: false,
         },
         {
-            name: 'number',
+            name: 'Кількість одиниць товару',
             inputEl: numberInput,
             validationRules: [isAmount],
             isValid: false,
         },
         {
-            name: 'comment',
+            name: 'Коментарі',
             inputEl: commentInput,
             validationRules: [],
             isValid: true,
@@ -358,21 +366,79 @@ function form() {
     }
 
     function validation() {
+        let valid = []
+
         inputs.forEach(el => {
             isAllValid = el.validationRules.map((func) => {
                 return func(el.inputEl.value, el.inputEl)
             })
 
             el.isValid = isAllValid.every(el => el === true)
+            valid.push(el.isValid)
         })
-        console.log(inputs)
+
+        let type = valid.every(el => el === true)
+        showResult(type)
+    }
+
+    function createElProd(prod, price) {
+        const resultBuyProd = getEl('.result-buy__prod')
+        const elem = document.createElement('p')
+        elem.classList.add('result-buy__prod-item')
+        elem.innerHTML = `
+        <p> Замовлений товар: ${prod}. 
+        <p> Ціна: ${price} грн за 1 шт.<p>
+        <p>Загальна ціна ${price * inputs[6].inputEl.value} грн<p>`
+        resultBuyProd.appendChild(elem)
+        return elem
+    }
+
+    function createElForm(name, value) {
+        const resultBuyForm = getEl('.result-buy__form')
+        const elem = document.createElement('li')
+        elem.classList.add('result-buy__form-item')
+        elem.innerHTML = `${name}: ${value}`
+        resultBuyForm.appendChild(elem)
+        return elem
+    }
+
+    function result() {
+        createElProd(prod, price)
+
+        for (let i = 0; i < inputs.length; i++) {
+            const name = inputs[i].name
+            const value = inputs[i].inputEl.value
+            createElForm(name, value)
+        }
+    }
+    
+    function showResult(type) {
+        // отримуємо усі true із функції isValid
+        if (type) {
+
+            result() // генерує результат заповнення форми
+
+            const res = getEl('.result-buy')
+            res.style.display = 'block'
+            const confirm = getEl('.confirm')
+
+            confirm.addEventListener('click', e => {
+                console.log(form)
+                form.submit() // відправляє форму на сервер
+            })
+        }
     }
 
     btnSubmitInput.addEventListener('click', (e) => {
-        e.preventDefault()
+        e.preventDefault(); // перехоплюємо відправку форми
         validation()
     })
+
 }
-form()
+
+
+
+
+
 
 
