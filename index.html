@@ -2,22 +2,37 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Promise</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
-    <div class="notebook">
-        <div class="notebook__wrapper">
-            <button class="notebook__btn btn-create">Показати</button>
-            <button class="notebook__btn btn-remove">Видалити</button>
-        </div>
+
+  <div class="posts">
+    <form class="form">
+
+      <div class="form-container">
+        <label for="input-number">
+          <h1 class="form-title">Введіть номер поста</h1>
+        </label>
+        <input type="number" name="number" id="input-number">
+        <small class="error"></small>
+      </div>
+
+      <input type="submit" class="form-btn__submit">
+
+    </form>
+
+    <div class="post">
+      <div class="post-description"></div>
     </div>
-    
-    <script async src="script.js"></script>
+  </div>
+
+
+  <script type="module" src="/main.js"></script>
 </body>
 
 </html>
