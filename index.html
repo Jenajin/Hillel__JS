@@ -3,36 +3,14 @@
 
 <head>
   <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Promise</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <title>Vite + React</title>
 </head>
 
 <body>
-
-  <div class="posts">
-    <form class="form">
-
-      <div class="form-container">
-        <label for="input-number">
-          <h1 class="form-title">Введіть номер поста</h1>
-        </label>
-        <input type="number" name="number" id="input-number">
-        <small class="error"></small>
-      </div>
-
-      <input type="submit" class="form-btn__submit">
-
-    </form>
-
-    <div class="post">
-      <div class="post-description"></div>
-    </div>
-  </div>
-
-
-  <script type="module" src="/main.js"></script>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
 </body>
 
 </html>
