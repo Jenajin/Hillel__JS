@@ -1,12 +1,12 @@
 import './App.scss'
-import SmilesCounter from './Components/SmilesCounter'
+import TodoWrap from './Components/TodoWrap'
 
 
 function App() {
   return (
     
     <div className='container'>
-      <SmilesCounter />
+      <TodoWrap />
     </div>
   
   )
