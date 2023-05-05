@@ -1,12 +1,14 @@
 import './App.scss'
-import TodoWrap from './Components/TodoWrap'
+import { HumburgersWrap } from './Components/HamburgersWrap'
 
 
 function App() {
   return (
     
     <div className='container'>
-      <TodoWrap />
+
+       <HumburgersWrap />
+
     </div>
   
   )
