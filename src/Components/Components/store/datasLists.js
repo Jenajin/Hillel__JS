@@ -44,11 +44,13 @@ export const additiveList = [
         name: 'посипати приправою',
         price: 15,
         calories: 0,
+        selected: false,
     },
     {
         id: 1,
         name: 'полити майонезом',
         price: 20,
         calories: 5,
+        selected: false,
     }
 ]
