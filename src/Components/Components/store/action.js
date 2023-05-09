@@ -1,3 +1,0 @@
-export const ADD_HAMBURGER = "ADD_HAMBURGER"
-export const ADD_FILLING = "ADD_FILLING"
-export const ADD_ADDITIVE = "ADD_ADDITIVE"

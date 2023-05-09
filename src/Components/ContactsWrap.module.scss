@@ -1,0 +1,19 @@
+.contacts {
+    display: flex;
+    gap: 20px;
+
+    div {
+        width: 100px;
+    }
+}
+
+.contacts__title {
+    display: flex;
+    gap: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    
+    div {
+        width: 100px;
+    }
+}

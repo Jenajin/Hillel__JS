@@ -1,5 +1,5 @@
 import './App.scss'
-import { HumburgersWrap } from './Components/HamburgersWrap'
+import { ContactsWrap } from './Components/ContactsWrap'
 
 
 function App() {
@@ -7,7 +7,8 @@ function App() {
     
     <div className='container'>
 
-       <HumburgersWrap />
+      <ContactsWrap />
+
 
     </div>
   
