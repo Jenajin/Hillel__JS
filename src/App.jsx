@@ -1,35 +1,19 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import './App.scss'
 import { Layout } from './Components/appLayout/Layout'
-import { HomePage } from './Components/pageViews/HomePage'
-import { AlbumsPage } from './Components/pageViews/AlbumsPage/AlbumsPage'
+import { UserForm } from './Components/pageViews/UserForm'
 
-const fetchUsers = async () => {
-  const response = await fetch('https://jsonplaceholder.typicode.com/users')
-  return await response.json()
-}
 
 
 const routes = createBrowserRouter([
   {
     path: '/',
     Component: Layout,
-    loader: fetchUsers,
     children: [
       {
         index: true,
-        Component: HomePage,
+        Component: UserForm,
       },
-
-      // {
-      //   path: 'albums',
-      //   Component: AlbumsPage,
-      // },
-
-      {
-        path: '/:id',
-        Component: AlbumsPage,
-      }
     ]
   }
 ])
