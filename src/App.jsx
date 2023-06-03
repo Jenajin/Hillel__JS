@@ -3,6 +3,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import { Layout } from './Components/Layout/Layout'
 import { HomePage } from './Components/pages/HomePage/HomePage'
 import { TodoList } from "./Components/pages/TodoList/TodoList";
+import { Weather } from "./Components/pages/Weather/Weather";
 
 
 const router = createBrowserRouter([
@@ -18,7 +19,12 @@ const router = createBrowserRouter([
       {
         path: "/todos",
         Component: TodoList,
-      }
+      },
+
+      {
+        path: "/weahter",
+        Component: Weather,
+      },
     ]
   }
 ])

@@ -29,6 +29,15 @@ export const Layout = () => {
                             Todos
                         </LinkStyled>
                     </ListItem>
+
+                    <ListItem>
+                        <LinkStyled
+                            variant="h3"
+                            component={RouterLink}
+                            to="/weahter">
+                            Weather
+                        </LinkStyled>
+                    </ListItem>
                 </ListWrap>
             </Box>
 
